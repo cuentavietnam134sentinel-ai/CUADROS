@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "framework": "laravel",
+    "outputDirectory": "",
     "functions": {
         "api/*.php": {
             "runtime": "vercel-php@0.7.5"
@@ -8,8 +8,12 @@
     },
     "routes": [
         {
-            "src": "/(css|js|img|favicon.ico|robots.txt)/(.*)",
+            "src": "/(css|js|img|build)/(.*)",
             "dest": "/public/$1/$2"
+        },
+        {
+            "src": "/(favicon\\.ico|robots\\.txt)",
+            "dest": "/public/$1"
         },
         {
             "src": "/(.*)",
