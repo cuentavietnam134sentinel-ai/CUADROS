@@ -1,0 +1,296 @@
+Prompt maestro: Web Laravel para empresa de cuadros de resina epoxi
+1. Objetivo general
+Quiero que actúes como desarrollador web full-stack profesional, arquitecto de software especializado en Laravel, diseñador UI/UX y especialista en ciberseguridad.
+Tu tarea es construir la web completa de una empresa dedicada a la creación y venta de cuadros de resina epoxi (arte decorativo, piezas únicas, series limitadas y trabajos personalizados por encargo). La web debe ser funcional, moderna, interactiva, segura, organizada y fácil de mantener, utilizando principalmente:
+Laravel y PHP: lógica del servidor, arquitectura MVC, rutas, controladores, modelos, middleware, validaciones y servicios. Blade: plantillas dinámicas y reutilizables. HTML5: estructura semántica. CSS3: diseño visual, animaciones, transiciones y adaptación a dispositivos. JavaScript: interactividad, validaciones de experiencia de usuario y actualizaciones dinámicas. MySQL: almacenamiento de datos. Eloquent ORM: consultas, relaciones y operaciones con la base de datos. Composer y Artisan: dependencias, configuración y comandos. Vite: compilación de recursos frontend cuando corresponda.
+Utiliza las herramientas nativas de Laravel antes de crear soluciones manuales que el framework ya resuelve.
+No quiero únicamente ejemplos de código ni fragmentos aislados. Trabaja sobre los archivos reales del proyecto, crea las carpetas necesarias, implementa las funcionalidades, conecta los componentes y comprueba que funcionen.
+Antes de comenzar, inspecciona el proyecto existente, identifica su versión de Laravel, revisa sus dependencias y comprende su estructura. Conserva los componentes útiles y modifica lo necesario sin eliminar funcionalidades válidas. No asumas una versión de Laravel sin comprobarla.
+2. Contexto del negocio
+La empresa fabrica y vende cuadros decorativos de resina epoxi. La web debe transmitir arte artesanal, elegancia y calidad, y permitir comprar, conocer el proceso y solicitar piezas personalizadas.
+Tipos de producto (ejemplos, ajustables):
+Cuadros de olas y efecto océano. Cuadros abstractos y geodas. Cuadros con acabados dorados, plateados o metálicos.
+
+Piezas personalizadas por encargo (colores, medidas, estilo, incluso con flores secas u objetos conmemorativos). Series limitadas y piezas únicas.
+Características propias del negocio que la web debe respetar:
+Muchas piezas son únicas: el inventario puede ser de 1 unidad. Al venderse, la pieza debe marcarse como vendida y no poder comprarse de nuevo. Algunos productos se fabrican bajo pedido y tienen un tiempo de elaboración estimado. Los pedidos personalizados requieren una solicitud o cotización antes de generar el pedido. Los cuadros son frágiles: el proceso de envío debe contemplar empaque y datos de entrega completos. La fotografía es central: la web debe mostrar muy bien las piezas (varios ángulos, detalle, vista en ambiente).
+
+3. Contenido y secciones de la web
+
+Sección
+
+Contenido
+
+Inicio
+
+Propuesta de valor, piezas destacadas, categorías, proceso resumido, llamadas a la acción, testimonios
+
+Galería / Catálogo
+
+Piezas filtrables por categoría, tamaño, paleta de color, precio y disponibilidad
+
+Detalle de producto
+
+Fotos múltiples, descripción, medidas, materiales, tiempo de elaboración, estado (disponible, vendida, bajo pedido), cuidados
+
+Personalizados
+
+Formulario de solicitud con configurador visual y subida de imágenes de referencia
+
+Proceso artesanal
+
+Explicación paso a paso de cómo se crea un cuadro de resina
+
+Cuidados de la pieza
+
+Limpieza, exposición a la luz, ubicación, mantenimiento
+
+Sobre nosotros
+
+Historia, filosofía, materiales, equipo
+
+Preguntas frecuentes Envíos, tiempos, devoluciones, personalización, garantía
+
+Contacto
+
+Formulario, WhatsApp, redes sociales, ubicación o zona de cobertura
+
+Carrito y compra
+
+Flujo completo descrito en la sección 11
+
+Cuenta de cliente
+
+Perfil, pedidos, solicitudes personalizadas, direcciones, favoritos
+
+Panel de administración
+
+Gestión de productos, categorías, pedidos, solicitudes, mensajes y reseñas
+
+Legales
+
+Términos, política de privacidad, política de envíos y devoluciones
+
+Redacta textos de ejemplo coherentes con el negocio. No uses texto genérico tipo "lorem ipsum" en las secciones principales. No inventes cifras, premios, reseñas ni clientes reales: marca claramente cualquier contenido de demostración.
+
+4. Diseño visual y experiencia de usuario
+Implementa tres sistemas visuales diferenciados que compartan una identidad gráfica coherente, inspirada en la resina epoxi: transparencia, profundidad, brillo y colores de océano.
+A. Liquid Glass para autenticación
+Utilízalo en inicio de sesión, registro y recuperación de contraseña.
+Paneles translúcidos con efecto de vidrio esmerilado. Transparencia y desenfoque con backdrop-filter , con alternativa cuando no esté disponible. Bordes delicados, reflejos y sombras suaves. Fondos con degradados profesionales (por ejemplo azul océano, turquesa y toques dorados que evoquen la resina). Animaciones discretas al aparecer los formularios y al interactuar con los campos. Indicadores visuales de errores, validaciones y estados de carga. Contraste suficiente y campos legibles. Diseño adaptable a móviles.
+Implementa las vistas con Blade y conecta los formularios con rutas, controladores y mecanismos de autenticación. Los efectos nunca deben dificultar la escritura, la lectura ni la navegación.
+B. Spatial UI para las páginas principales
+Utilízalo en inicio, catálogo, detalle de producto, paneles de usuario y secciones informativas.
+Tarjetas con profundidad visual y sombras suaves; las piezas del catálogo deben lucir como obras de galería. Elementos flotantes y capas bien organizadas. Espaciado amplio y jerarquía visual clara; las fotografías de los cuadros son las protagonistas. Transiciones fluidas al pasar el cursor y al desplazarse (por ejemplo, zoom suave en la imagen del cuadro). Fondos claros: blanco, azul cielo y gris claro, con acentos que combinen con la identidad de la marca (turquesa, azul profundo, dorado). Navegación sencilla y componentes reutilizables. Menús y barras proporcionales al tamaño de pantalla. Diseño responsive para teléfonos, tabletas y computadores.
+Organiza los estilos en archivos CSS coherentes dentro de la estructura frontend de Laravel. No conviertas todas las secciones en paneles flotantes: mantén una composición equilibrada, profesional y fácil de usar.
+C. Live Preview para formularios, productos y pagos
+Implementa previsualización dinámica en tres puntos.
+1. Configurador de cuadro personalizado
+El cliente elige tamaño, orientación, paleta de colores, acabado (brillante, mate, metálico, dorado) y elementos opcionales.
+
+Una vista previa visual se actualiza al instante con cada elección (representación aproximada con CSS/SVG/gradientes, claramente indicada como ilustrativa, ya que cada pieza artesanal es única). El precio estimado se actualiza al cambiar las opciones, pero es referencial: el precio definitivo lo calcula el servidor y puede ajustarse en la cotización. Permite subir imágenes de referencia con validación de tipo, tamaño y contenido.
+2. Formulario de pago de demostración
+Tarjeta visual junto al formulario. Actualiza el nombre del titular mientras se escribe. Actualiza el número de demostración con formato visual apropiado. Actualiza vencimiento y marca cuando pueda identificarse de forma segura. Permite ver el reverso para el campo de seguridad, sin almacenar ni registrar ese dato. Transiciones suaves, validación de campos y errores comprensibles.
+3. Carrito y compras
+Actualiza cantidades, subtotales, descuentos autorizados, envío y totales automáticamente. Actualiza el resumen visual al agregar o retirar productos. Evita enviar formularios incompletos o cantidades inválidas. Recalcula precios y verifica inventario en el servidor. Mantén sincronizados la interfaz y los datos confirmados por el backend.
+La previsualización no representa una transacción real. Nunca almacenes números completos de tarjeta, CVV ni contraseñas en texto plano. Si se implementan pagos reales, usa una pasarela reconocida con su integración oficial, y gestiona los datos sensibles con sus componentes seguros. Nunca simules un cobro real como si hubiera ocurrido.
+
+5. Arquitectura de Laravel y patrón MVC
+
+Componente Models Views Controllers Routes Middleware Form Requests
+Services
+Policies y Gates
+
+Responsabilidad Datos y relaciones con Eloquent Interfaz con Blade Reciben solicitudes, coordinan y devuelven respuestas Puntos de entrada Controles transversales (autenticación, autorización) Validación y autorización de solicitudes complejas Lógica de negocio cuando la complejidad lo justifique (cálculo de precios, pedidos, cotizaciones) Acceso a recursos y acciones
+
+Componente Migrations Seeders y Factories Events, Listeners y Jobs
+
+Responsabilidad Versionado de la base de datos Datos de demostración y pruebas Procesos desacoplados (por ejemplo, correos de confirmación)
+
+No crees clases o capas adicionales solo para aparentar una arquitectura profesional: cada componente debe tener una responsabilidad concreta. Separa presentación, lógica de negocio y acceso a datos. Evita controladores excesivamente grandes y modelos con responsabilidades que no les corresponden.
+
+6. Autenticación, registro y sesiones
+Implementa registro, inicio de sesión, cierre de sesión y recuperación de contraseña. Primero revisa si el proyecto ya dispone de autenticación. Si no existe, selecciona una solución compatible con la versión instalada de Laravel (herramientas oficiales o starter kit compatible). No instales paquetes innecesarios ni reemplaces un sistema existente sin justificarlo.
+Roles: cliente y administrador (y los adicionales que el proyecto realmente necesite). El acceso al panel de administración debe estar protegido por middleware y policies.
+Registro
+Formulario con nombre, correo, contraseña y los campos necesarios. Validación del lado del cliente para mejorar la experiencia. Validación real en el servidor con las herramientas de Laravel. Restricción de correos duplicados. Indicador de fortaleza de contraseña cuando sea útil. Hashing seguro de contraseñas con los mecanismos de Laravel. Confirmación de registro únicamente tras completar la operación. Verificación del correo cuando el proyecto lo requiera.
+Inicio de sesión
+Verificación mediante los mecanismos de Laravel. Mensajes de error claros sin revelar información sensible. Regeneración de la sesión tras autenticar. Protección de páginas privadas con middleware. Redirección según permisos y roles realmente autorizados. Limitación de intentos de acceso.
+Cierre de sesión
+Cierre de la sesión autenticada. Invalidación de la sesión y regeneración del token CSRF.
+
+Redirección a una página pública. Notificación del resultado.
+Recuperación de contraseña
+Usa el sistema de restablecimiento de Laravel con tokens temporales. Evita revelar innecesariamente si un correo está registrado. No crees enlaces inseguros ni contraseñas predeterminadas. No confirmes el cambio hasta que el servidor lo haya procesado.
+7. Rutas, controladores y validaciones
+Usa routes/web.php para rutas con sesiones, cookies y CSRF. Usa routes/api.php solo si el proyecto tiene una API y su configuración lo permite.
+Nombres de ruta descriptivos. Agrupa rutas relacionadas cuando mejore la organización. Middleware para proteger recursos privados. Evita duplicar rutas o funcionalidades. Route model binding cuando sea apropiado. Validación del servidor antes de modificar datos. Respuestas HTTP coherentes. No confíes en identificadores, precios, roles ni permisos enviados por el navegador. Comprueba que cada usuario esté autorizado para acceder al recurso (pedidos, solicitudes, direcciones).
+Para formularios sencillos usa la validación integrada; para complejos, Form Requests. JavaScript puede validar para mejorar la experiencia, pero la validación definitiva siempre es del servidor.
+8. Sistema de notificaciones
+Desarrolla un sistema reutilizable para todo el proyecto que contemple:
+Registro exitoso. Inicio y cierre de sesión. Actualización de perfil. Producto agregado o eliminado del carrito o de favoritos. Compra confirmada. Solicitud personalizada enviada o cotización recibida. Mensaje de contacto enviado. Error de validación y error de conexión. Sesión expirada y acceso denegado. Operación pendiente o fallida. Pieza ya vendida o sin disponibilidad.
+Usa toasts, alertas o mensajes integrados en los formularios, con:
+
+Iconos apropiados.
+Animaciones de entrada y salida.
+Duración configurable.
+Cierre manual.
+Compatibilidad con teclado y lectores de pantalla.
+Mensajes que no dependan solo del color.
+Presentación coherente en todas las páginas.
+Usa sesiones y mensajes flash de Laravel cuando corresponda. En operaciones asíncronas, usa las respuestas reales del servidor para actualizar la interfaz. Nunca muestres una operación como exitosa solo porque JavaScript ejecutó una animación.
+9. Estructura de carpetas
+Respeta la estructura estándar de Laravel y adáptala a las necesidades reales del proyecto.
+proyecto/  app/   Http/    Controllers/    Middleware/    Requests/   Models/   Policies/   Providers/   Services/   Jobs/  bootstrap/  config/  database/   factories/   migrations/   seeders/  public/   images/   icons/  resources/   css/    app.css    liquid-glass.css    spatial-ui.css    components.css    responsive.css   js/    app.js    auth.js    notifications.js    cart.js    configurator.js    payment-preview.js   views/
+
+
+
+ layouts/
+
+
+
+ components/
+
+
+
+ auth/
+
+
+
+ pages/
+
+
+
+ products/
+
+
+
+ custom-orders/
+
+
+
+ admin/
+
+ routes/
+
+  web.php
+
+ storage/
+
+ tests/
+
+  Feature/
+
+  Unit/
+
+ .env.example
+
+ .gitignore
+
+ artisan
+
+ composer.json
+
+ package.json
+
+ README.md
+
+La estructura es orientativa. Conserva los directorios y convenciones de la versión instalada. Crea servicios, políticas, jobs y componentes JavaScript solo cuando sean necesarios. No dupliques la estructura de Laravel con controladores, modelos o vistas en directorios alternativos sin razón técnica.
+Los archivos sensibles, registros, configuraciones privadas y copias de seguridad nunca deben ser accesibles desde el navegador. El directorio público debe corresponder a public/ . No expongas .env , archivos internos ni información de depuración.
+Imágenes de productos: guarda las cargas en storage con enlace simbólico ( storage:link ) o disco configurado; genera versiones optimizadas (miniatura y detalle) cuando aporte valor.
+
+10. Base de datos y Eloquent ORM
+Usa MySQL como opción predeterminada, salvo que el proyecto ya requiera otro motor. Configura la conexión mediante variables de entorno. No incluyas credenciales reales en el código. Tablas de referencia (ajustar a las funcionalidades reales):
+
+Tabla users, roles categories products product_images carts, cart_items orders, order_items
+
+Propósito Clientes y administradores Olas, abstractos, geodas, dorados, personalizados, etc. Nombre, slug, descripción, precio, medidas, materiales, tipo (pieza única, serie limitada, bajo pedido), tiempo de elaboración, stock, estado Fotos por producto, orden, imagen principal, texto alternativo Carrito de compras Pedidos y detalle (con precio y nombre del producto al momento de la compra)
+
+Tabla
+
+Propósito
+
+payments
+
+Estado y referencia de pagos (sin datos sensibles de tarjeta)
+
+addresses
+
+Direcciones de envío del cliente
+
+custom_requests
+
+Solicitudes personalizadas: medidas, paleta, acabado, descripción, referencias, estado, cotización
+
+custom_request_images Imágenes de referencia subidas
+
+favorites
+
+Piezas guardadas por el cliente
+
+reviews
+
+Reseñas moderadas
+
+contact_messages
+
+Mensajes del formulario de contacto
+
+faqs, pages (opcional)
+
+Contenido administrable
+
+Debes:
+Diseñar el esquema según las funcionalidades reales. Crear migraciones con claves primarias, foráneas, índices y restricciones. Usar tipos de datos apropiados (por ejemplo, precios con decimales o en la unidad mínima de la moneda). Definir relaciones Eloquent correctamente. Evitar registros duplicados cuando corresponda. Preparar seeders y factories (productos de demostración claramente marcados). Documentar cómo crear y migrar la base de datos. Gestionar errores sin exponer credenciales ni detalles internos. Usar transacciones cuando varias operaciones deban completarse como una unidad (descontar stock, crear pedido y pago). Evitar consultas innecesarias y problemas N+1 con carga anticipada.
+Usa Eloquent para operaciones habituales; Query Builder o SQL específico solo con justificación. No concatenes datos del usuario en consultas SQL. No modifiques destructivamente una base de datos existente sin autorización. Los cambios de estructura se hacen con migraciones versionadas.
+Reglas específicas del negocio:
+Una pieza única vendida pasa a estado "vendida" de forma atómica para evitar que dos clientes la compren a la vez (bloqueo o verificación dentro de la transacción). El pedido conserva copia de nombre y precio del producto en el momento de la compra. Los estados de custom_requests deben ser claros (por ejemplo: recibida, en revisión, cotizada, aceptada, en elaboración, finalizada, cancelada).
+
+11. Ciberseguridad desde el diseño
+Aplica seguridad en frontend y backend; no te limites a validaciones visuales.
+
+Riesgo Inyección SQL Validación XSS CSRF Autenticación Autorización Sesiones Fuerza bruta Contraseñas Secretos Errores
+Archivos
+Acceso a objetos Encabezados HTTP Dependencias Base de datos Operaciones críticas Solicitudes duplicadas Formularios públicos Registros Archivos públicos
+
+Medida Eloquent, Query Builder y consultas parametrizadas Validar en el servidor todos los datos relevantes Escape de Blade; evitar renderizar HTML sin escapar Protección de Laravel en formularios y operaciones web Mecanismos seguros del framework Middleware, policies y gates Cookies y sesiones configuradas de forma segura Limitar intentos de autenticación y operaciones sensibles (rate limiting) Hashing seguro de Laravel Variables de entorno Depuración desactivada en producción; sin trazas expuestas Validar tipo, tamaño y contenido de imágenes (productos y referencias); nombres seguros; sin ejecución de archivos subidos Verificar propiedad y autorización de pedidos, solicitudes y direcciones Configurar protecciones apropiadas Mantener Composer y paquetes frontend actualizados Principio de mínimos privilegios
+Verificar precios, descuentos, envío, inventario y permisos en el servidor
+Idempotencia en pedidos y pagos
+Protección contra spam (honeypot, rate limiting o captcha si se justifica)
+No almacenar contraseñas, tokens sensibles ni datos de pago No publicar configuraciones, respaldos ni documentos privados
+
+No confíes en que HTML o JavaScript impidan ataques: un usuario puede modificar las solicitudes directamente. Usa como referencia OWASP y la documentación oficial de Laravel y PHP. No afirmes que la aplicación es completamente segura: documenta las comprobaciones realizadas, las limitaciones y los riesgos pendientes.
+
+12. Compras, carrito, personalizados y pagos
+Flujo de compra:
+1. Selección de productos. 2. Carrito de compras. 3. Edición de cantidades (las piezas únicas no admiten más de 1 unidad). 4. Cálculo de subtotal, envío y total. 5. Formulario de datos de compra y dirección de entrega. 6. Resumen visual en tiempo real. 7. Validación definitiva en el servidor. 8. Creación del pedido. 9. Procesamiento del pago mediante una pasarela configurada. 10. Confirmación del resultado. 11. Actualización del estado del pedido. 12. Comprobante o historial de compras.
+Flujo de pedido personalizado:
+1. El cliente completa el configurador y envía la solicitud con referencias. 2. El administrador la revisa y envía una cotización con precio final y tiempo estimado. 3. El cliente acepta o rechaza la cotización desde su cuenta. 4. Al aceptar, se genera el pedido y se procede al pago. 5. El estado se actualiza durante la elaboración hasta la entrega.
+Usa modelos Eloquent y relaciones apropiadas para productos, pedidos, detalles y pagos. Usa transacciones para mantener la consistencia. Distingue claramente entre pedidos pendientes, pagos aprobados, pagos rechazados y operaciones canceladas.
+Verifica los pagos en el servidor con los mecanismos oficiales de la pasarela. Si usas webhooks, valida su autenticidad y evita procesar dos veces el mismo evento. No confíes en precios ni totales enviados por el navegador: calcula los valores definitivos en el backend.
+En modo demostración, usa datos ficticios y etiquetas visibles que indiquen que el pago no es real.
+13. Panel de administración
+Panel protegido por rol de administrador que permita:
+Crear, editar, ocultar y eliminar productos y categorías, con carga de múltiples imágenes. Gestionar stock y estado (disponible, vendida, bajo pedido). Ver y actualizar el estado de pedidos. Revisar solicitudes personalizadas, enviar cotizaciones y cambiar su estado. Leer mensajes de contacto. Moderar reseñas. Ver un resumen básico (pedidos recientes, solicitudes pendientes, piezas disponibles).
+
+Cada acción debe estar protegida por policies, validada en el servidor y reflejarse realmente en la base de datos. No dejes secciones del panel como maquetas sin funcionalidad.
+14. Diseño responsive y accesibilidad
+Todos los componentes deben funcionar en teléfonos Android y iPhone, tabletas, portátiles y monitores de escritorio.
+Diseño adaptable. Navegación por teclado. Etiquetas asociadas a los campos. Contraste suficiente. Estados de foco visibles. Texto alternativo descriptivo en las imágenes de cada cuadro. Alternativas a animaciones excesivas y soporte de prefers-reduced-motion . Textos claros y botones con funciones reconocibles. Formularios compatibles con lectores de pantalla. Estados de carga y error comprensibles.
+Rendimiento: como la web es muy visual, usa imágenes optimizadas, carga diferida ( loading="lazy" ), tamaños responsivos y evita bibliotecas pesadas innecesarias.
+SEO básico: títulos y descripciones por página, URLs amigables (slugs), etiquetas Open Graph para compartir piezas y sitemap cuando corresponda.
+Usa CSS y JavaScript sencillos cuando sean suficientes. Incorpora bibliotecas frontend solo si aportan una ventaja real y son compatibles con el proyecto.
+15. Reglas de programación
+Respeta las convenciones de Laravel y PSR. Usa nombres descriptivos. Evita duplicar código. Separa presentación, lógica de negocio y persistencia. Reutiliza componentes Blade. Usa inyección de dependencias cuando aporte claridad. Evita controladores demasiado grandes. No añadas dependencias sin una razón concreta. No reimplementes funciones que Laravel ya ofrece. No reemplaces todo el proyecto por una estructura nueva sin revisar lo existente. No crees funcionalidades ficticias que aparenten funcionar. No dejes botones sin acción. No incluyas claves, tokens ni contraseñas reales en el repositorio. No suprimas errores para hacer parecer que algo funciona.
+
+Mantén el código compatible con la versión instalada.
+Si necesitas agregar una biblioteca, explica qué problema resuelve, por qué la elegiste y cómo instalarla.
+16. Pruebas y verificación
+Después de implementar cada funcionalidad, verifica su funcionamiento:
+Las rutas responden correctamente. Formularios válidos e inválidos. Registro e inicio de sesión. Permisos y restricciones de acceso (cliente vs. administrador; un cliente no puede ver pedidos ajenos). Las notificaciones corresponden al resultado real. Las operaciones se reflejan en la base de datos. Cantidades, totales, envío y estados de pedidos. Una pieza única no puede venderse dos veces. Flujo completo de solicitud personalizada y cotización. Carga de imágenes: archivos válidos aceptados y archivos inválidos rechazados. Pruebas automatizadas disponibles (PHPUnit o Pest, según lo configurado en el proyecto), incluyendo pruebas de funcionalidad (Feature) y unitarias. Errores de consola y problemas visuales en distintos tamaños de pantalla. Los recursos de Vite compilan correctamente. Revisión de los cambios mediante Git diff.
+Corrige los errores detectados antes de declarar una función terminada.
+17. Entrega final
+Al terminar, entrega:
+Resumen de lo implementado y de los archivos creados o modificados. Instrucciones de instalación: composer install , .env , php artisan key:generate , migraciones, seeders, storage:link , npm install y compilación con Vite. Credenciales de demostración (solo ficticias) para cliente y administrador. Lista de comprobaciones realizadas y sus resultados. Limitaciones conocidas y riesgos de seguridad pendientes. Qué partes son de demostración (pagos, reseñas, productos) y qué falta configurar para producción (pasarela de pago real, correo, dominio, HTTPS).
+
+

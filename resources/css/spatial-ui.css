@@ -1,0 +1,63 @@
+/* Spatial UI System for Main Pages */
+:root {
+    --spatial-bg: #f8fafc;
+    --spatial-card-bg: #ffffff;
+    --spatial-text: #1e293b;
+    --spatial-accent: #0891b2; /* Ocean Cyan */
+    --spatial-gold: #d97706; /* Resin Gold */
+    --spatial-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    --spatial-shadow-hover: 0 25px 30px -5px rgba(8, 145, 178, 0.15), 0 12px 15px -6px rgba(8, 145, 178, 0.1);
+}
+
+body {
+    background-color: var(--spatial-bg);
+    color: var(--spatial-text);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+}
+
+.spatial-card {
+    background: var(--spatial-card-bg);
+    border-radius: 1rem;
+    box-shadow: var(--spatial-shadow);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    position: relative;
+    overflow: hidden;
+}
+
+.spatial-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--spatial-shadow-hover);
+    border-color: rgba(8, 145, 178, 0.3);
+}
+
+.spatial-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #164e63 50%, #042f2e 100%);
+    color: white;
+    position: relative;
+}
+
+.spatial-badge {
+    background: rgba(8, 145, 178, 0.1);
+    color: var(--spatial-accent);
+    border: 1px solid rgba(8, 145, 178, 0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.gold-accent {
+    color: var(--spatial-gold);
+}
+
+.gold-badge {
+    background: rgba(217, 119, 6, 0.1);
+    color: var(--spatial-gold);
+    border: 1px solid rgba(217, 119, 6, 0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
